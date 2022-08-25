@@ -1,10 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WelcomeController;
-use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +30,10 @@ Route::get('/blog/single-blog-post',[BlogController::class,'show'])->name('blog.
 Route::get('/about-us', function(){
     return view('about');
 })->name('about');
-
 Route::get('/contact',[ContactController::class,'index'])->name('contact.index');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

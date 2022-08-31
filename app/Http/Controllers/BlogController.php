@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index(){
-        return view('blog');
+        return view('blogposts.blog');
     }
     public function show(){
-        return view('single_blog_post');
+        return view('blogposts.single_blog_post');
     }
     public function create(){
-        return view('create_blog_post');
+        return view('blogposts.create_blog_post');
+    }
+    public function store(Request $request)
+    {
+        $alinput= $request->all();
+        dd($alinput);
     }
 }

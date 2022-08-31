@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('header')
+@section('head')
 <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
 {{-- <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script> --}}
 @endsection
@@ -12,7 +12,8 @@
 
         <!-- Contact Form -->
         <div class="contact-form">
-            <form action="" method="">
+            <form action="{{ route('blog.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <!-- Title -->
                 <label for="title"><span>Title</span></label>
                 <input type="text" id="title" name="title" />

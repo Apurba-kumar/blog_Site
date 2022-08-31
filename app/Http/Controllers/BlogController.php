@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -26,11 +27,23 @@ class BlogController extends Controller
         ]);
         $title = $request->input('title');
         $slug = Str::slug($title,'-');
-        $user_id = optional(Auth::user())->id;
+        // $user_id = optional(Auth::user())->id;
+        $user_id = Auth::user()->id;
 
         $body = $request->input('body');
 
         $imagePath= 'storage/'. $request->file('image')->store('postImages', 'public');
-        dd('passed');
+
+        $post = new Post();
+        $post->title = $title;
+        $post->slug = $slug;
+        $post->user_id = $user_id;
+        // $post->user_id = request()->$user_id;
+
+        $post->body = $body;
+        $post->imagePath = $imagePath;
+        $post->save();
+
+        return redirect()->back();
     }
 }

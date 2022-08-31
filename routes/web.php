@@ -34,7 +34,7 @@ Route::get('/contact',[ContactController::class,'index'])->name('contact.index')
 
 Route::get('/blog/create',[BlogController::class,'create'])->name('blog.create');
 
-Route::post('/blog',[BlogController::class,'store'])->name('blog.store');
+Route::post('/blogs',[BlogController::class,'store'])->name('blog.store');
 
 
 Route::get('/dashboard', function () {

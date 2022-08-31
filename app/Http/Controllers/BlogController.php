@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -22,6 +24,13 @@ class BlogController extends Controller
           'image'=>'required | image',
           'body'=>'required'
         ]);
+        $title = $request->input('title');
+        $slug = Str::slug($title,'-');
+        $user_id = optional(Auth::user())->id;
+
+        $body = $request->input('body');
+
+        $imagePath= 'storage/'. $request->file('image')->store('postImages', 'public');
         dd('passed');
     }
 }

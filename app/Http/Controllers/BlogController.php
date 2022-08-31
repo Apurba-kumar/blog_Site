@@ -17,7 +17,11 @@ class BlogController extends Controller
     }
     public function store(Request $request)
     {
-        $alinput= $request->all();
-        dd($alinput);
+        $request->validate([
+          'title'=>'required',
+          'image'=>'required | image',
+          'body'=>'required'
+        ]);
+        dd('passed');
     }
 }

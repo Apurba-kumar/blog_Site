@@ -85,5 +85,6 @@
           document.querySelector(".sidebar").style.width = "0";
         });
     </script>
+   @yield('scripts')
   </body>
 </html>

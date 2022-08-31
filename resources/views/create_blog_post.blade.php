@@ -1,5 +1,10 @@
 @extends('layout')
 
+@section('header')
+<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+{{-- <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script> --}}
+@endsection
+
 @section('main')
 <main class="container" style="background-color: #fff;">
     <section id="contact-us">
@@ -27,3 +32,20 @@
 
     </section>
 @endsection
+@section('scripts')
+<script>
+    CKEDITOR.replace( 'body' );
+</script>
+{{-- <script>
+    ClassicEditor
+            .create( document.querySelector( '#body' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+</script> --}}
+@endsection
+
+

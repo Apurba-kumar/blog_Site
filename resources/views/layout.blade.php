@@ -33,6 +33,9 @@
             <li><a class="{{ Request::routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}">Sign In</a></li>
             <li><a class="{{ Request::routeIs('register') ? 'active' : '' }}" href="{{ route('register') }}">Register</a></li>
             @endguest
+            @auth()
+            <li><a class="{{ Request::routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">dashboard</a></li>
+            @endauth
           </ul>
         </div>
 

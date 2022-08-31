@@ -198,7 +198,7 @@ footer small {
   list-style: none;
   background-color: #494949;
   margin: 20px 5px;
-  
+
   border-radius: 15px;
 }
 
@@ -241,7 +241,7 @@ footer small {
 
 .card-blog-content h4 {
   font-size: 24px;
-  font-weight: bolder; 
+  font-weight: bolder;
   text-transform: capitalize;
 }
 
@@ -508,3 +508,13 @@ textarea {
     margin-bottom: 25px;
   }
 }
+/* dashboard */
+.dashboard {
+    margin-top: 30px;
+  }
+  .dashboard a {
+    all: revert;
+    font-size: 26px;
+    display: inline-block;
+    margin: 2px 0;
+  }

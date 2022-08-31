@@ -12,4 +12,7 @@ class BlogController extends Controller
     public function show(){
         return view('single_blog_post');
     }
+    public function create(){
+        return view('create_blog_post');
+    }
 }

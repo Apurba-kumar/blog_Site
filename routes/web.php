@@ -32,6 +32,8 @@ Route::get('/about-us', function(){
 })->name('about');
 Route::get('/contact',[ContactController::class,'index'])->name('contact.index');
 
+Route::get('/blog/create',[BlogController::class,'create'])->name('blog.create');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

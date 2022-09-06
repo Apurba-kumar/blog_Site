@@ -25,7 +25,7 @@ use App\Http\Controllers\WelcomeController;
 //to welcome
 Route::get('/',[WelcomeController::class,'index'])->name('welcome.index');
 Route::get('/blog',[BlogController::class,'index'])->name('blog.index');
-Route::get('/blog/single-blog-post',[BlogController::class,'show'])->name('blog.show');
+Route::get('/blog/{post:slug}',[BlogController::class,'show'])->name('blog.show');
 
 Route::get('/about-us', function(){
     return view('about');

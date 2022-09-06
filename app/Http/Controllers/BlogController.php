@@ -10,10 +10,12 @@ use Illuminate\Support\Str;
 class BlogController extends Controller
 {
     public function index(){
-        return view('blogposts.blog');
+        $posts = Post::all();
+        return view('blogposts.blog', compact('posts'));
     }
-    public function show(){
-        return view('blogposts.single_blog_post');
+    public function show($slug){
+        $post = Post::where('slug', $slug)->first();
+        return view('blogposts.single_blog_post', compact('post') );
     }
     public function create(){
         return view('blogposts.create_blog_post');

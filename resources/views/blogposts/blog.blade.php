@@ -25,6 +25,16 @@
         <section class="cards-blog latest-blog">
             @foreach ($posts as $post)
                 <div class="card-blog-content">
+                    @auth
+                        @if (auth()->user()->id === $post->user->id)
+                            <div class="post-buttons">
+                                <a href="{{ route('blog.edit', $post) }}">Edit</a>
+                                <form action="" method="">
+                                    <input type="submit" value=" Delete">
+                                </form>
+                            </div>
+                        @endif
+                    @endauth
                     <img src="{{ asset($post->imagePath) }}" alt="" style="height: 500px;width:600px" />
                     <p>
                         {{ $post->created_at->diffForHumans() }}
@@ -46,6 +56,6 @@
             <a href="">4</a>
             <a href="">5</a>
             <a href="">&raquo;</a>
-          </div>
+        </div>
     </main>
 @endsection

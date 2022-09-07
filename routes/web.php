@@ -25,7 +25,7 @@ use App\Http\Controllers\WelcomeController;
 //to welcome
 Route::get('/',[WelcomeController::class,'index'])->name('welcome.index');
 Route::get('/blog',[BlogController::class,'index'])->name('blog.index');
-Route::get('/blog/{post:slug}',[BlogController::class,'show'])->name('blog.show');
+
 
 Route::get('/about-us', function(){
     return view('about');
@@ -33,6 +33,8 @@ Route::get('/about-us', function(){
 Route::get('/contact',[ContactController::class,'index'])->name('contact.index');
 
 Route::get('/blog/create',[BlogController::class,'create'])->name('blog.create');
+
+Route::get('/blog/{post:slug}',[BlogController::class,'show'])->name('blog.show');
 
 Route::post('/blogs',[BlogController::class,'store'])->name('blog.store');
 

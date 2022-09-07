@@ -9,32 +9,41 @@ use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
-    public function index(){
-        $posts = Post::all();
+    public function index()
+    {
+        $posts = Post::latest()->get();
         return view('blogposts.blog', compact('posts'));
     }
-    public function show($slug){
-        $post = Post::where('slug', $slug)->first();
-        return view('blogposts.single_blog_post', compact('post') );
+    // public function show($slug)
+    // {
+    //     $post = Post::where('slug', $slug)->first();
+    //     return view('blogposts.single_blog_post', compact('post'));
+    // }
+
+    //using route model binding
+    public function show(Post $post){
+        return view('blogposts.single_blog_post', compact('post'));
     }
-    public function create(){
+
+    public function create()
+    {
         return view('blogposts.create_blog_post');
     }
     public function store(Request $request)
     {
         $request->validate([
-          'title'=>'required',
-          'image'=>'required | image',
-          'body'=>'required'
+            'title' => 'required',
+            'image' => 'required | image',
+            'body' => 'required'
         ]);
         $title = $request->input('title');
-        $slug = Str::slug($title,'-');
+        $slug = Str::slug($title, '-');
         // $user_id = optional(Auth::user())->id;
         $user_id = Auth::user()->id;
 
         $body = $request->input('body');
 
-        $imagePath= 'storage/'. $request->file('image')->store('postImages', 'public');
+        $imagePath = 'storage/' . $request->file('image')->store('postImages', 'public');
 
         $post = new Post();
         $post->title = $title;

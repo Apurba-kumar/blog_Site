@@ -36,8 +36,9 @@ class BlogController extends Controller
             'image' => 'required | image',
             'body' => 'required'
         ]);
+        $postId = Post::latest()->take(1)->first()-> id +1;
         $title = $request->input('title');
-        $slug = Str::slug($title, '-');
+        $slug = Str::slug($title, '-').'-' . $postId;
         // $user_id = optional(Auth::user())->id;
         $user_id = Auth::user()->id;
 

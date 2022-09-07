@@ -9,6 +9,12 @@ use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
+
+    //to create a middleware
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index']);
+    }
     public function index()
     {
         $posts = Post::latest()->get();

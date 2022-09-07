@@ -32,8 +32,9 @@ Route::get('/about-us', function(){
 })->name('about');
 Route::get('/contact',[ContactController::class,'index'])->name('contact.index');
 
+//we can use middleware here
+//Route::get('/blog/create',[BlogController::class,'create'])->name('blog.create')->middleware('auth');
 Route::get('/blog/create',[BlogController::class,'create'])->name('blog.create');
-
 Route::get('/blog/{post:slug}',[BlogController::class,'show'])->name('blog.show');
 
 Route::post('/blogs',[BlogController::class,'store'])->name('blog.store');

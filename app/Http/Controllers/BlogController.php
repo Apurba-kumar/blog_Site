@@ -13,11 +13,17 @@ class BlogController extends Controller
     //to create a middleware
     public function __construct()
     {
-        $this->middleware('auth')->except(['index']);
+        $this->middleware('auth')->except(['index','show']);
     }
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::latest()->get();
+        if($request->search){
+            $posts = Post::where('title','like', '%'.$request->search .'%')
+            ->orWhere('body','like', '%'.$request->search .'%')->latest()->get();
+        }else{
+            $posts = Post::latest()->get();
+        }
+
         return view('blogposts.blog', compact('posts'));
     }
     // public function show($slug)

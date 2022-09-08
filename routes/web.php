@@ -38,7 +38,9 @@ Route::get('/blog/create',[BlogController::class,'create'])->name('blog.create')
 Route::get('/blog/{post:slug}',[BlogController::class,'show'])->name('blog.show');
 Route::get('/blog/{post}/edit',[BlogController::class,'edit'])->name('blog.edit');
 
-Route::put('/blog/{post}/update',[BlogController::class,'update'])->name('blog.update');
+Route::put('/blog/{post}',[BlogController::class,'update'])->name('blog.update');
+
+Route::delete('/blog/{post}',[BlogController::class,'delete'])->name('blog.delete');
 
 Route::post('/blogs',[BlogController::class,'store'])->name('blog.store');
 

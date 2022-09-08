@@ -103,4 +103,10 @@ class BlogController extends Controller
 
         return redirect()->back()->with('status', 'Post create successfully ! ');
     }
+
+    public function delete(Post $post){
+        $post->delete();
+        return redirect()->back()->with('status','Post Delete sucessfully');
+    }
+
 }

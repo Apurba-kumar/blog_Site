@@ -19,9 +19,9 @@ class BlogController extends Controller
     {
         if($request->search){
             $posts = Post::where('title','like', '%'.$request->search .'%')
-            ->orWhere('body','like', '%'.$request->search .'%')->latest()->get();
+            ->orWhere('body','like', '%'.$request->search .'%')->latest()->paginate(4);
         }else{
-            $posts = Post::latest()->get();
+            $posts = Post::latest()->paginate(4);
         }
 
         return view('blogposts.blog', compact('posts'));
@@ -110,7 +110,7 @@ class BlogController extends Controller
         return redirect()->back()->with('status', 'Post create successfully ! ');
     }
 
-    public function delete(Post $post){
+    public function destroy(Post $post){
         $post->delete();
         return redirect()->back()->with('status','Post Delete sucessfully');
     }

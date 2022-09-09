@@ -11,7 +11,7 @@
      @endif
         <div class="searchbar">
             <form action="">
-                <input type="text" placeholder="Search..." name="search" />
+                <input type="text" placeholder="Search..." name="search"/>
 
                 <button type="submit">
                     <i class="fa fa-search"></i>
@@ -29,13 +29,13 @@
         </div>
 
         <section class="cards-blog latest-blog">
-            @foreach ($posts as $post)
+            @forelse ($posts as $post)
                 <div class="card-blog-content">
                     @auth
                         @if (auth()->user()->id === $post->user->id)
                             <div class="post-buttons">
                                 <a href="{{ route('blog.edit', $post) }}">Edit</a>
-                                <form action="{{ route('blog.delete',$post) }}" method="post">
+                                <form action="{{ route('blog.destroy',$post) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <input type="submit" value=" Delete">
@@ -52,11 +52,13 @@
                         <a href="{{ route('blog.show', $post) }}">{{ $post->title }}</a>
                     </h4>
                 </div>
-            @endforeach
+                @empty
+                <p>Not Found! sorry there is no post related to this search</p>
+            @endforelse
 
         </section>
         <!-- pagination -->
-        <div class="pagination" id="pagination">
+        {{-- <div class="pagination" id="pagination">
             <a href="">&laquo;</a>
             <a class="active" href="">1</a>
             <a href="">2</a>
@@ -64,6 +66,7 @@
             <a href="">4</a>
             <a href="">5</a>
             <a href="">&raquo;</a>
-        </div>
+        </div> --}}
+        {{ $posts->links() }}
     </main>
 @endsection

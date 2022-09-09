@@ -40,7 +40,7 @@ Route::get('/blog/{post}/edit',[BlogController::class,'edit'])->name('blog.edit'
 
 Route::put('/blog/{post}',[BlogController::class,'update'])->name('blog.update');
 
-Route::delete('/blog/{post}',[BlogController::class,'delete'])->name('blog.delete');
+Route::delete('/blog/{post}',[BlogController::class,'destroy'])->name('blog.destroy');
 
 Route::post('/blogs',[BlogController::class,'store'])->name('blog.store');
 

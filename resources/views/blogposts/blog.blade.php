@@ -67,6 +67,6 @@
             <a href="">5</a>
             <a href="">&raquo;</a>
         </div> --}}
-        {{ $posts->links() }}
+        {{ $posts->links('pagination::default') }}
     </main>
 @endsection

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Kumar Blog</title>
     <!-- Css -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}" /> --}}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <!-- Font awesome -->
     <link
       rel="stylesheet"
@@ -16,7 +16,7 @@
     {{-- taliwind css --}}
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.17/tailwind.min.css"> --}}
      {{-- bootstrap css   --}}
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> --}}
 </head>
   <body>
     <div id="wrapper">

@@ -4,14 +4,13 @@
     <main class="container">
         <h2 class="header-title">All Blog Posts</h2>
         @if (session('status'))
-        <p
-        style="color: #fff; width:100%;font-size:18px;font-weight:600;text-align:center;background:#5cb85c;padding:17px 0;margin-bottom:6px;">
-        {{ session('status') }}</p>
-
-     @endif
+            <p
+                style="color: #fff; width:100%;font-size:18px;font-weight:600;text-align:center;background:#5cb85c;padding:17px 0;margin-bottom:6px;">
+                {{ session('status') }}</p>
+        @endif
         <div class="searchbar">
             <form action="">
-                <input type="text" placeholder="Search..." name="search"/>
+                <input type="text" placeholder="Search..." name="search" />
 
                 <button type="submit">
                     <i class="fa fa-search"></i>
@@ -21,10 +20,10 @@
         </div>
         <div class="categories">
             <ul>
-                <li><a href="">Health</a></li>
-                <li><a href="">Entertainment</a></li>
-                <li><a href="">Sports</a></li>
-                <li><a href="">Nature</a></li>
+                @foreach ($categories as $category)
+                    <li><a href="">{{ $category->name }}</a></li>
+                @endforeach
+
             </ul>
         </div>
 
@@ -35,7 +34,7 @@
                         @if (auth()->user()->id === $post->user->id)
                             <div class="post-buttons">
                                 <a href="{{ route('blog.edit', $post) }}">Edit</a>
-                                <form action="{{ route('blog.destroy',$post) }}" method="post">
+                                <form action="{{ route('blog.destroy', $post) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <input type="submit" value=" Delete">
@@ -52,7 +51,7 @@
                         <a href="{{ route('blog.show', $post) }}">{{ $post->title }}</a>
                     </h4>
                 </div>
-                @empty
+            @empty
                 <p>Not Found! sorry there is no post related to this search</p>
             @endforelse
 

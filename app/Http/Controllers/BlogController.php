@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use App\Models\Category;
 
 class BlogController extends Controller
 {
@@ -23,8 +24,8 @@ class BlogController extends Controller
         }else{
             $posts = Post::latest()->paginate(4);
         }
-
-        return view('blogposts.blog', compact('posts'));
+        $categories = Category::all();
+        return view('blogposts.blog', compact('posts','categories'));
     }
     // public function show($slug)
     // {

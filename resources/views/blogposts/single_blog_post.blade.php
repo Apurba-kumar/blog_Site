@@ -22,30 +22,16 @@
       <section class="recommended">
         <p>Related</p>
         <div class="recommended-cards">
-          <a href="">
-            <div class="recommended-card">
-              <img src="{{ asset('images/pic5.jpg') }}" alt="" loading="lazy" />
-              <h4>
-                12 Health Benefits Of Pomegranate Fruit
-              </h4>
-            </div>
-          </a>
-          <a href="">
-            <div class="recommended-card">
-              <img src="{{ asset('images/pushups.jpg') }}" alt="" loading="lazy" />
-              <h4>
-                The Truth About Pushups
-              </h4>
-            </div>
-          </a>
-          <a href="">
-            <div class="recommended-card">
-              <img src="{{ asset('images/smoothies.jpg') }}" alt="" loading="lazy" />
-              <h4>
-                Healthy Smoothies
-              </h4>
-            </div>
-          </a>
+            @foreach ($relatedPosts as $relatedPost )
+
+              <div class="recommended-card" >
+                <img src="{{asset($relatedPost->imagePath)}}" alt="" loading="lazy" style="width: 350px; height:350px"/>
+                <h4>
+                  {{$relatedPost->title}}
+                </h4>
+              </div>
+
+            @endforeach
 
         </div>
       </section>

@@ -37,7 +37,10 @@ class BlogController extends Controller
 
     //using route model binding
     public function show(Post $post){
-        return view('blogposts.single_blog_post', compact('post'));
+        $category = $post->category;
+
+        $relatedPosts = $category->posts()->where('id', '!=', $post->id)->latest()->take(3)->get();
+        return view('blogposts.single_blog_post', compact('post', 'relatedPosts'));
     }
 
     public function edit(Post $post){

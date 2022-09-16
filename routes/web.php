@@ -34,6 +34,9 @@ Route::get('/about-us', function(){
 })->name('about');
 Route::get('/contact',[ContactController::class,'index'])->name('contact.index');
 
+// To Send data to email.
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
 //we can use middleware here
 //Route::get('/blog/create',[BlogController::class,'create'])->name('blog.create')->middleware('auth');
 Route::get('/blog/create',[BlogController::class,'create'])->name('blog.create');

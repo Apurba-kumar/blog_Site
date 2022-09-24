@@ -47,9 +47,10 @@
         <!-- sidebar footer -->
         <footer class="sidebar-footer">
           <div>
-            <a href=""><i class="fab fa-facebook-f"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/Apurbakumar96s"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/apurba_kumar_surjo/"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/surjokumar96"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/Apurba-kumar"><i class="fab fa-github"></i></a>
           </div>
 
           <small>&copy 2022 Kumar Blog</small>
@@ -67,9 +68,10 @@
       <!-- Main footer -->
       <footer class="main-footer">
         <div>
-          <a href=""><i class="fab fa-facebook-f"></i></a>
-          <a href=""><i class="fab fa-instagram"></i></a>
-          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/Apurbakumar96s"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/apurba_kumar_surjo/"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/surjokumar96"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/Apurba-kumar"><i class="fab fa-github"></i></a>
         </div>
         <small>&copy 2022 Kumar Blog</small>
       </footer>

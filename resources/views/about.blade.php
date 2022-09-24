@@ -6,7 +6,7 @@
       <section class="single-blog-post">
         <h1 style="color: white">About Me</h1>
         <div class="single-blog-post-ContentImage" data-aos="fade-left">
-          <img src="{{ asset('images/photography.jpg') }}" alt="" />
+          <img src="{{ asset('images/about.jpg') }}" alt="" />
         </div>
 
         <div>

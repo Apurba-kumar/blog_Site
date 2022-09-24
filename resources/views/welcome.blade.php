@@ -1,7 +1,7 @@
 @extends('layout')
 @section('header')
    <!-- header -->
-   <header class="header" style=" background-image: url({{asset("images/photography.jpg")}});">
+   <header class="header" style=" background-image: url({{asset("images/apurba.jpg")}});">
     <div class="header-text">
       <h1>Kumar Blog</h1>
       <h4>Dashboard of verified news...</h4>

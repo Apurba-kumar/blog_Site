@@ -11,15 +11,20 @@
 
 This is a simple blogging site. where can able to create their own blog through different categories. For doing this task first they have to need register for this purpose. After completing registration they can create categories, and posts, and can edit also They are able to delete their blogs. If anyone tries to contact us, we have a contact page where they can catch us.
 
-## Project setup
+## Project setup 
 ```
 composer install
 ```
+
+```
 mv .env.example .env
+```
 ```
 php artisan cache:clear
 ```
+```
 composer dump-autoload
+```
 ```
 php artisan key:generate
 
